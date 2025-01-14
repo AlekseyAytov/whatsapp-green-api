@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="form-section">
+        <input type="text" id="idInstance" placeholder="IdInstance" name="idInstance">
+        <input type="text" id="apiTokenInstance" placeholder="ApiTokenInstance" name="apiTokenInstance">
+        <button type="button" onclick="getSettings()" name="getSettings">getSettings</button>
+        <button type="button" onclick="getStateInstance()" name="getStateInstance">getStateInstance</button>
+    </div>
+
+    <div class="response-section">
+        <pre id="responseOutput">test message</pre>
+    </div>
+</div>
+
+Напиши обработчики для кнопок getSettings и getStateInstance чтобы эти кнопки отправляли post формы на разные url.
+Данные для форм нужно брать с полей idInstance и apiTokenInstance.
