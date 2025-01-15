@@ -27,6 +27,7 @@ body {
     border-radius: 4px;
 }
 .form-section button {
+    width: 320px;
     padding: 10px 15px;
     margin: 10px 0;
     background-color: #007bff;
@@ -39,12 +40,12 @@ body {
     background-color: #0056b3;
 }
 .response-section {
-    width: 300px;
-    padding: 10px;
+    width: 400px;
+    padding: 5px;
     border: 1px solid #ccc;
     border-radius: 4px;
     background-color: #f9f9f9;
-    white-space: pre-wrap;
+    /* white-space: pre-wrap; */
     overflow: auto;
-    height: 400px; /* Adjust height as needed */
+    height: 600px; /* Adjust height as needed */
 }

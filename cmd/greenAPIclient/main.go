@@ -7,7 +7,6 @@ import (
 )
 
 func main() {
-
 	mux := http.NewServeMux()
 	mux.HandleFunc(`/`, http.FileServer(http.Dir("./web/template/")).ServeHTTP)
 	mux.HandleFunc(`/settings`, internal.SettingsHandler)

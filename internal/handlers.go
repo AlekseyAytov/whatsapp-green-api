@@ -9,6 +9,11 @@ import (
 	greenapi "github.com/green-api/whatsapp-api-client-golang-v2"
 )
 
+const (
+	apiURL   = "https://api.green-api.com/"
+	mediaURL = "https://media.green-api.com/"
+)
+
 func SettingsHandler(w http.ResponseWriter, r *http.Request) {
 	if r.Method == http.MethodPost {
 		body, _ := io.ReadAll(r.Body)
@@ -21,8 +26,8 @@ func SettingsHandler(w http.ResponseWriter, r *http.Request) {
 		}
 
 		green := greenapi.GreenAPI{
-			APIURL:           "https://api.green-api.com/",
-			MediaURL:         "https://media.green-api.com/",
+			APIURL:           apiURL,
+			MediaURL:         mediaURL,
 			IDInstance:       auth.ID,
 			APITokenInstance: auth.Token,
 		}
@@ -40,6 +45,8 @@ func SettingsHandler(w http.ResponseWriter, r *http.Request) {
 		}
 
 		w.Write(data)
+	} else {
+		w.WriteHeader(http.StatusBadRequest)
 	}
 }
 
@@ -55,8 +62,8 @@ func StateHandler(w http.ResponseWriter, r *http.Request) {
 		}
 
 		green := greenapi.GreenAPI{
-			APIURL:           "https://api.green-api.com/",
-			MediaURL:         "https://media.green-api.com/",
+			APIURL:           apiURL,
+			MediaURL:         mediaURL,
 			IDInstance:       auth.ID,
 			APITokenInstance: auth.Token,
 		}
@@ -74,6 +81,8 @@ func StateHandler(w http.ResponseWriter, r *http.Request) {
 		}
 
 		w.Write(data)
+	} else {
+		w.WriteHeader(http.StatusBadRequest)
 	}
 }
 
@@ -88,11 +97,9 @@ func SendMessage(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 
-		fmt.Println(auth)
-
 		green := greenapi.GreenAPI{
-			APIURL:           "https://api.green-api.com/",
-			MediaURL:         "https://media.green-api.com/",
+			APIURL:           apiURL,
+			MediaURL:         mediaURL,
 			IDInstance:       auth.ID,
 			APITokenInstance: auth.Token,
 		}
@@ -103,8 +110,6 @@ func SendMessage(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 
-		fmt.Println(string(resp.Body))
-
 		data, err := resp.Body.MarshalJSON()
 		if err != nil {
 			fmt.Println(err)
@@ -112,6 +117,8 @@ func SendMessage(w http.ResponseWriter, r *http.Request) {
 		}
 
 		w.Write(data)
+	} else {
+		w.WriteHeader(http.StatusBadRequest)
 	}
 }
 
@@ -126,11 +133,9 @@ func SendFile(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 
-		fmt.Println(auth)
-
 		green := greenapi.GreenAPI{
-			APIURL:           "https://api.green-api.com/",
-			MediaURL:         "https://media.green-api.com/",
+			APIURL:           apiURL,
+			MediaURL:         mediaURL,
 			IDInstance:       auth.ID,
 			APITokenInstance: auth.Token,
 		}
@@ -141,8 +146,6 @@ func SendFile(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 
-		fmt.Println(string(resp.Body))
-
 		data, err := resp.Body.MarshalJSON()
 		if err != nil {
 			fmt.Println(err)
@@ -150,5 +153,7 @@ func SendFile(w http.ResponseWriter, r *http.Request) {
 		}
 
 		w.Write(data)
+	} else {
+		w.WriteHeader(http.StatusBadRequest)
 	}
 }

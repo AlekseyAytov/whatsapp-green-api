@@ -1,0 +1,15 @@
+[Unit]
+Description=whatsup green-api demo service
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=root
+WorkingDirectory=/opt/whatsupGreenAPI/
+ExecStart=/opt/whatsupGreenAPI/whatsapi
+
+[Install]
+WantedBy=multi-user.target
