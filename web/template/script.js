@@ -5,7 +5,8 @@ async function getSettings() {
 
     try {
         responseOutput.textContent = ""
-        const response = await fetch('http://178.208.80.96:8080/settings', {
+        // const response = await fetch('http://178.208.80.96:8080/settings', {
+        const response = await fetch('http://127.0.0.1:8080/settings', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -36,7 +37,8 @@ async function getStateInstance() {
 
     try {
         responseOutput.textContent = ""
-        const response = await fetch('http://178.208.80.96:8080/state', {
+        // const response = await fetch('http://178.208.80.96:8080/state', {
+        const response = await fetch('http://127.0.0.1:8080/state', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -69,7 +71,8 @@ async function sendMessage() {
 
     try {
         responseOutput.textContent = ""
-        const response = await fetch('http://178.208.80.96:8080/send', {
+        // const response = await fetch('http://178.208.80.96:8080/send', {
+        const response = await fetch('http://127.0.0.1:8080/send', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -104,7 +107,8 @@ async function sendFileByUrl() {
 
     try {
         responseOutput.textContent = ""
-        const response = await fetch('http://178.208.80.96:8080/file', {
+        // const response = await fetch('http://178.208.80.96:8080/file', {
+        const response = await fetch('http://127.0.0.1:8080/file', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

@@ -1,6 +1,6 @@
 package internal
 
-type AuthData struct {
+type PageData struct {
 	ID     string `json:"idInstance"`
 	Token  string `json:"apiTokenInstance"`
 	Number string `json:"number"`
